@@ -1,11 +1,16 @@
-'use strict'
+//= require jquery
+//= require parsley
+//= require parsley.i18n.es
 
-var profileMenuLink = document.getElementById('profile-menu-link') || null;
-var profileMenu = document.getElementById('profile-menu') || null;
+var profileMenuLink = $('#profile-menu-link');
+var profileMenu = $('#profile-menu');
 
 if (profileMenuLink) {
-    profileMenuLink.addEventListener('click', function(e) {
-        e.preventDefault();
-        profileMenu.classList.toggle('dn');
-    });
+  profileMenuLink.on('click', function (e) {
+    e.preventDefault();
+    profileMenu.toggleClass('dn');
+  });
+  // profileMenu.on('mouseleave', function () {
+  //   $(this).toggleClass('dn');
+  // });
 }
