@@ -10,24 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160920161046) do
+ActiveRecord::Schema.define(version: 20160921173732) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "entities", force: :cascade do |t|
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
+    t.string   "email",                  default: "",    null: false
+    t.string   "encrypted_password",     default: "",    null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
+    t.integer  "sign_in_count",          default: 0,     null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
+    t.datetime "created_at",                             null: false
+    t.datetime "updated_at",                             null: false
     t.string   "invitation_token"
     t.datetime "invitation_created_at"
     t.datetime "invitation_sent_at"
@@ -37,6 +37,20 @@ ActiveRecord::Schema.define(version: 20160920161046) do
     t.integer  "invited_by_id"
     t.integer  "invitations_count",      default: 0
     t.string   "type"
+    t.boolean  "completed",              default: false
+    t.string   "website"
+    t.string   "phone"
+    t.string   "contact_email"
+    t.string   "facebook"
+    t.string   "twitter"
+    t.string   "instagram"
+    t.string   "medium"
+    t.string   "linkedin"
+    t.string   "behance"
+    t.string   "github"
+    t.string   "pinterest"
+    t.string   "youtube"
+    t.string   "gplus"
     t.index ["email"], name: "index_entities_on_email", unique: true, using: :btree
     t.index ["invitation_token"], name: "index_entities_on_invitation_token", unique: true, using: :btree
     t.index ["invitations_count"], name: "index_entities_on_invitations_count", using: :btree
