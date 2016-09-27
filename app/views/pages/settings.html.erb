@@ -1,21 +1,21 @@
 <section class="mw6 center pv4 ph2">
   <h1 class="mb4 fw4 tc">Configuración</h1>
-  <form action="sign-up_submit" method="get" accept-charset="utf-8">
+  <form action="sign-up_submit" method="get" accept-charset="utf-8" data-parsley-validate novalidate>
     <fieldset id="sign_up" class="ba b--transparent ph0 mh0">
       <div class="pv3 bb b--light-gray">
         <h2 class="f6 fw4 gray mv0 ttu">Cuenta</h2>
       </div>
       <div class="mv3">
         <label class="db fw4 lh-copy f6" for="email-address">Correo electrónico</label>
-        <input class="pa2 input-reset ba br2 b--light-gray bg-transparent w-100 measure" type="email" name="email-address"  id="email-address">
+        <input class="pa2 input-reset ba br2 b--light-gray bg-transparent w-100 measure" type="email" name="email-address"  id="email-address" required>
       </div>
       <div class="mv3">
         <label class="db fw4 lh-copy f6" for="password">Nueva contraseña</label>
-        <input class="b pa2 input-reset ba br2 b--light-gray bg-transparent" type="password" name="password"  id="password">
+        <input class="b pa2 input-reset ba br2 b--light-gray bg-transparent" type="password" name="password"  id="password" required>
       </div>
       <div class="mv3">
         <label class="db fw4 lh-copy f6" for="password-confirm">Confirmar Nueva contraseña</label>
-        <input class="b pa2 input-reset ba br2 b--light-gray bg-transparent" type="password" name="password-confirm"  id="password-confirm">
+        <input class="b pa2 input-reset ba br2 b--light-gray bg-transparent" type="password" name="password-confirm"  id="password-confirm" required>
       </div>
     </fieldset>
     <div class="mv3">
