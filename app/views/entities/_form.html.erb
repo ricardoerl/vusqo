@@ -1,0 +1,75 @@
+<%= form_for(@entity, :html => {"data-parsley-validate" => true}) do |f| %>
+  <fieldset id="sign_up" class="ba b--transparent ph0 mh0">
+    <div class="pv3 bb b--light-gray">
+      <h2 class="f6 fw4 purple mv0 ttu">Información general</h2>
+    </div>
+    <div class="mv3">
+      <label class="db fw4 lh-copy f6" for="name">Nombre</label>
+      <input class="pa2 input-reset ba br2 b--light-gray bg-transparent w-100" type="text" name="entity[name]"  id="name">
+    </div>
+    <div class="mv3">
+      <label class="db fw4 lh-copy f6" for="description">Descripción</label>
+      <textarea name="entity[description]" id="description" class="pa2 input-reset ba br2 b--light-gray bg-transparent w-100" rows="3"></textarea>
+    </div>
+    <div class="mv3">
+      <label class="db fw4 lh-copy f6" for="website">Sitio web</label>
+      <input class="pa2 input-reset ba br2 b--light-gray bg-transparent w-100" type="text" name="entity[website]"  id="website">
+    </div>
+    <div class="mv3">
+      <label class="db fw4 lh-copy f6" for="phone">Teléfono</label>
+      <input class="pa2 input-reset ba br2 b--light-gray bg-transparent w-100" type="text" name="entity[phone]"  id="phone">
+    </div>
+    <div class="mv3">
+      <label class="db fw4 lh-copy f6" for="contact_email">Correo electrónico de contacto</label>
+      <input class="pa2 input-reset ba br2 b--light-gray bg-transparent w-100" type="email" name="entity[contact_email]"  id="contact_email">
+    </div>
+  </fieldset>
+  <fieldset id="sign_up" class="ba b--transparent ph0 mh0">
+    <div class="pv3 bb b--light-gray">
+      <h2 class="f6 fw4 purple mv0 ttu">Redes sociales</h2>
+    </div>
+    <div class="mv3">
+      <label class="db fw4 lh-copy f6" for="facebook">Facebook</label>
+      <input class="pa2 input-reset ba br2 b--light-gray bg-transparent w-100" type="text" name="entity[facebook]"  id="facebook">
+    </div>
+    <div class="mv3">
+      <label class="db fw4 lh-copy f6" for="twitter">Twitter</label>
+      <input class="pa2 input-reset ba br2 b--light-gray bg-transparent w-100" type="text" name="entity[twitter]"  id="twitter">
+    </div>
+    <div class="mv3">
+      <label class="db fw4 lh-copy f6" for="instagram">Instagram</label>
+      <input class="pa2 input-reset ba br2 b--light-gray bg-transparent w-100" type="text" name="entity[instagram]"  id="instagram">
+    </div>
+    <div class="mv3">
+      <label class="db fw4 lh-copy f6" for="medium">Medium</label>
+      <input class="pa2 input-reset ba br2 b--light-gray bg-transparent w-100" type="text" name="entity[medium]"  id="medium">
+    </div>
+    <div class="mv3">
+      <label class="db fw4 lh-copy f6" for="linkedin">LinkedIn</label>
+      <input class="pa2 input-reset ba br2 b--light-gray bg-transparent w-100" type="text" name="entity[linkedin]"  id="linkedin">
+    </div>
+    <div class="mv3">
+      <label class="db fw4 lh-copy f6" for="behance">Behance</label>
+      <input class="pa2 input-reset ba br2 b--light-gray bg-transparent w-100" type="text" name="entity[behance]"  id="behance">
+    </div>
+    <div class="mv3">
+      <label class="db fw4 lh-copy f6" for="github">GitHub</label>
+      <input class="pa2 input-reset ba br2 b--light-gray bg-transparent w-100" type="text" name="entity[github]"  id="github">
+    </div>
+    <div class="mv3">
+      <label class="db fw4 lh-copy f6" for="pinterest">Pinterest</label>
+      <input class="pa2 input-reset ba br2 b--light-gray bg-transparent w-100" type="text" name="entity[pinterest]"  id="pinterest">
+    </div>
+    <div class="mv3">
+      <label class="db fw4 lh-copy f6" for="youtube">YouTube</label>
+      <input class="pa2 input-reset ba br2 b--light-gray bg-transparent w-100" type="text" name="entity[youtube]"  id="youtube">
+    </div>
+    <div class="mv3">
+      <label class="db fw4 lh-copy f6" for="gplus">Google+</label>
+      <input class="pa2 input-reset ba br2 b--light-gray bg-transparent w-100" type="text" name="entity[gplus]"  id="gplus">
+    </div>
+  </fieldset>
+  <div class="mv3 tc">
+    <input class="ph4 dim pointer pv2 input-reset br-pill ba b--purple bg-purple white" type="submit" value="Guardar">
+  </div>
+<% end %>

@@ -28,6 +28,9 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+gem 'carrierwave'
+gem 'fog-aws'
+
 gem 'devise'
 gem 'devise_invitable'
 
