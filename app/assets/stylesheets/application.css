@@ -1,3 +1,7 @@
+/*
+ *= require notie
+ */
+
 html, body {
   font-size: 16px;
   line-height: 1.2;
@@ -6,6 +10,13 @@ html, body {
 
 a {
   color: #5E2CA5;
+}
+
+
+/* Notie style */
+
+#notie-alert-outer {
+  box-shadow: none!important;
 }
 
 
