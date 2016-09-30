@@ -32,23 +32,31 @@
           </li>
         </ul> -->
         <ul class="list pl0 mv0">
-          <li class="relative">
-            <a href="#" class="link dim gray db pv3" id="profile-menu-link">
-              <span class="v-mid mr1">Hola, <span class="dn dib-ns purple">Yahoo</span></span>
-              <img src="https://logo.clearbit.com/yahoo.com" width="30" height="30" class="dib v-mid br-100" alt="Logo">
-            </a>
-            <ul class="list bg-white pl0 mv0 absolute z-1 ba b--light-gray tr w5 right-0 dn" id="profile-menu">
-              <li>
-                <a href="#" class="link dim gray db pa3">Mi perfil</a>
-              </li>
-              <li>
-                <a href="#" class="link dim gray db pa3">Configuración</a>
-              </li>
-              <li>
-                <a href="#" class="link dim gray db pa3">Cerrar sesión</a>
-              </li>
-            </ul>
-          </li>
+          <% if current_entity.blank? %>
+            <li class="relative">
+              <a href="#" class="link dim gray db pv3" id="profile-menu-link">
+                <span class="v-mid mr1">Iniciar sesión</span>
+              </a>
+            </li>
+          <% else %>
+            <li class="relative">
+              <a href="#" class="link dim gray db pv3" id="profile-menu-link">
+                <span class="v-mid mr1">Hola, <span class="dn dib-ns purple"><%= current_entity.name %></span></span>
+                <img src="<%= current_entity.logo.url %>" width="30" height="30" class="dib v-mid br-100" alt="Logo">
+              </a>
+              <ul class="list bg-white pl0 mv0 absolute z-1 ba b--light-gray tr w5 right-0 dn" id="profile-menu">
+                <li>
+                  <a href="#" class="link dim gray db pa3">Mi perfil</a>
+                </li>
+                <li>
+                  <a href="#" class="link dim gray db pa3">Configuración</a>
+                </li>
+                <li>
+                  <%= link_to 'Cerrar sesión', destroy_entity_session_path, method: :delete, class: "link dim gray db pa3" %>
+                </li>
+              </ul>
+            </li>
+          <% end %>
         </ul>
       </div>
     </div>

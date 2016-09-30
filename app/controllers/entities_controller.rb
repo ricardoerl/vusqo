@@ -43,9 +43,10 @@ class EntitiesController < ApplicationController
   def update
     respond_to do |format|
       if @entity.update(entity_params)
-        format.html { redirect_to @entity, notice: 'Entity was successfully updated.' }
+        format.html { redirect_to entities_url, notice: 'Entity was successfully updated.' }
         format.json { render :show, status: :ok, location: @entity }
       else
+        p @entity.errors
         format.html { render :edit }
         format.json { render json: @entity.errors, status: :unprocessable_entity }
       end
@@ -70,6 +71,6 @@ class EntitiesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def entity_params
-      params.require(:entity).permit(:name,:description, :website, :phone, :contact_email, :facebook, :twitter, :instagram, :medium, :linkedin, :behance, :github, :pinterest, :youtube, :gplus)
+      params.require(:entity).permit(:name,:description, :website, :phone, :contact_email, :facebook, :twitter, :instagram, :medium, :linkedin, :behance, :github, :pinterest, :youtube, :gplus, :logo)
     end
 end
