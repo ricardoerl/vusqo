@@ -3,7 +3,7 @@
     <div class="cf lh-solid">
       <div class="fl pv3">
         <div class="dib v-mid mr4">
-          <a href="#" class="db link dim">
+          <a href="<%= root_path %>" class="db link dim">
             <%= image_tag("vusqo-logo.png", size: "30", class: "dib v-mid mr2", alt: "Vusqo") %>
             <span class="f4 b v-mid">vusqo</span>
           </a>
@@ -34,7 +34,7 @@
         <ul class="list pl0 mv0">
           <% if current_entity.blank? %>
             <li class="relative">
-              <%= link_to "Iniciar sesión", new_entity_session_path, class: 'link dim gray db pv3', id: "profile-menu-link"  %>
+              <%= link_to "Iniciar sesión", new_entity_session_path, class: 'link dim gray db pv3' %>
             </li>
           <% else %>
             <li class="relative">
