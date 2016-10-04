@@ -34,9 +34,7 @@
         <ul class="list pl0 mv0">
           <% if current_entity.blank? %>
             <li class="relative">
-              <a href="#" class="link dim gray db pv3" id="profile-menu-link">
-                <span class="v-mid mr1">Iniciar sesión</span>
-              </a>
+              <%= link_to "Iniciar sesión", new_entity_session_path, class: 'link dim gray db pv3', id: "profile-menu-link"  %>
             </li>
           <% else %>
             <li class="relative">

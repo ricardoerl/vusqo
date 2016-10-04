@@ -1,0 +1,24 @@
+<section class="mw6 center pv4 ph2">
+  <div class="mb4">
+    <h1 class="fw4 tc">Iniciar sesión</h1>
+    <p class="f6 mv0 tc">¿No tienes una cuenta? <a href="#" class="link dim">Registrate tu empresa aquí.</a></p>
+  </div>
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <fieldset id="sign_up" class="ba b--transparent ph0 mh0">
+      <div class="mv3">
+        <%= f.label "Correo electrónico", class: "db fw4 lh-copy f6" %>
+        <%= f.email_field :email, class: "pa2 input-reset ba br2 b--light-gray bg-transparent w-100", required: true %>
+      </div>
+      <div class="mv3">
+        <%= f.label :password, class: "db fw4 lh-copy f6" %><br />
+        <%= f.password_field :password, autocomplete: "off", class: "b pa2 input-reset ba br2 b--light-gray bg-transparent w-100" %>
+      </div>
+    </fieldset>
+    <div class="mv3 tc">
+      <input class="ph4 pv2 input-reset br-pill ba b--purple bg-purple white" type="submit" value="Iniciar sesión">
+    </div>
+  <% end %>
+  <div class="pt4 tc">
+    <%= link_to "¿Olvidaste tu contraseña? Click aquí.", new_password_path(resource_name), class: "f6 link dim db" %>
+  </div>
+</section>
