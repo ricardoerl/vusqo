@@ -6,7 +6,7 @@ class Entity < ApplicationRecord
 
   mount_uploader :logo, LogoUploader
 
-  validate :validate_minimum_image_size
+  validate :validate_minimum_image_size, :on => :create#:unless => :new_record?# if new_record?
 
 
   def complete?
