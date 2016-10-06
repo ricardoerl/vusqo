@@ -1,5 +1,5 @@
 <header class="bb b--light-gray">
-  <div class="mw8 center ph2">
+  <div class="mw8 center ph3">
     <div class="cf lh-solid">
       <div class="fl pv3">
         <div class="dib v-mid mr4">
@@ -8,7 +8,7 @@
             <span class="f4 b v-mid">vusqo</span>
           </a>
         </div>
-        <div class="dib v-mid">
+        <div class="dn dib-ns v-mid">
           <a href="#" class="link dim v-mid">Empresas</a>
         </div>
         <!-- <div class="dib v-mid mr3">
@@ -18,23 +18,18 @@
         </div> -->
       </div>
       <div class="fr">
-        <!-- <ul class="list pl0 mv0">
-          <li class="dib v-mid">
-            <a href="#" class="link dim gray db pv3">Iniciar sesión</a>
-          </li>
-          <li class="dib v-mid">
-            <a href="#" class="link dim purple b db pa3">
-              <span class="v-mid mr1">¿Quieres registar una empresa?</span>
-              <svg id="i-user" viewBox="0 0 32 32" width="30" height="30" class="dib v-mid br-100 ba" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-                  <path d="M22 11 C22 16 19 20 16 20 13 20 10 16 10 11 10 6 12 3 16 3 20 3 22 6 22 11 Z M4 30 L28 30 C28 21 22 20 16 20 10 20 4 21 4 30 Z" />
-              </svg>
-            </a>
-          </li>
-        </ul> -->
         <ul class="list pl0 mv0">
           <% if current_entity.blank? %>
-            <li class="relative">
-              <%= link_to "Iniciar sesión", new_entity_session_path, class: 'link dim gray db pv3' %>
+            <li class="dib v-mid mr3">
+              <%= link_to "Iniciar sesión", new_entity_session_path, class: "link db dim gray db pv3" %>
+            </li>
+            <li class="dib v-mid">
+              <%= link_to page_path('apply'), class: "link dim purple db pv3" do %>
+                <span class="dn dib-ns v-mid mr1">Registar una empresa</span>
+                <svg id="i-work" viewBox="0 0 32 32" width="30" height="30" class="dib v-mid" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
+                  <path d="M30 8 L2 8 2 26 30 26 Z M20 8 C20 8 20 4 16 4 12 4 12 8 12 8 M8 26 L8 8 M24 26 L24 8" />
+                </svg>
+              <% end %>
             </li>
           <% else %>
             <li class="relative">

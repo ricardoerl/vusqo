@@ -1,11 +1,21 @@
 <section class="mw6 center pv4 ph2">
   <div class="mb4">
     <h1 class="fw4 tc">Iniciar sesión</h1>
-    <p class="f6 mv0 tc">¿No tienes una cuenta? <a href="#" class="link dim">Registrate tu empresa aquí.</a></p>
+    <p class="f6 mv0 tc">¿No tienes una cuenta? <%= link_to "Registra tu empresa aquí.", page_path('apply'), class: "link dim" %></p>
   </div>
-  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-    <p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {"data-parsley-validate": true, "novalidate": true}) do |f| %>
+    <fielset class="mb2 tc">
+      <% if notice %>
+        <div class="bg-light-blue pa2 br2">
+          <%= notice %>
+        </div>
+      <% end %>
+      <% if alert %>
+        <div class="bg-yellow pa2 br2">
+          <%= alert %>
+        </div>
+      <% end %>
+    </fielset>
     <fieldset id="sign_up" class="ba b--transparent ph0 mh0">
       <div class="mv3">
         <%= f.label "Correo electrónico", class: "db fw4 lh-copy f6" %>
@@ -13,7 +23,7 @@
       </div>
       <div class="mv3">
         <%= f.label :password, class: "db fw4 lh-copy f6" %><br />
-        <%= f.password_field :password, autocomplete: "off", class: "b pa2 input-reset ba br2 b--light-gray bg-transparent w-100" %>
+        <%= f.password_field :password, autocomplete: "off", class: "b pa2 input-reset ba br2 b--light-gray bg-transparent w-100", required: true %>
       </div>
     </fieldset>
     <div class="mv3 tc">
