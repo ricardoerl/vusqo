@@ -20,6 +20,13 @@ class EntitiesController < ApplicationController
 
   # GET /entities/1/edit
   def edit
+    p session[:invitation_token]
+    p '------------------'
+    if session[:invitation_token] == @entity.invitation_token
+      render :edit
+    else
+      redirect_to root_path, notice: 'Ha ocurrido un error, por favor abre el link de la invitación desde el correo que te enviamos.'
+    end
   end
 
   # POST /entities
