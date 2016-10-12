@@ -5,7 +5,7 @@ class EntitiesController < ApplicationController
   # GET /entities
   # GET /entities.json
   def index
-    @entities = Entity.all
+    @entities = Entity.where("name is NOT NULL")#.where(logo: "is NOT NULL")
   end
 
   # GET /entities/1
@@ -20,9 +20,7 @@ class EntitiesController < ApplicationController
 
   # GET /entities/1/edit
   def edit
-    p session[:invitation_token]
-    p '------------------'
-    if session[:invitation_token] == @entity.invitation_token
+    if current_entity.email == @entity.email
       render :edit
     else
       redirect_to root_path, notice: 'Ha ocurrido un error, por favor abre el link de la invitación desde el correo que te enviamos.'

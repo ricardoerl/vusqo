@@ -1,7 +1,9 @@
 class Entities::InvitationsController < Devise::InvitationsController
-  def edit
-  	p params
-    session[:invitation_token] = params[:invitation_token]
+  def update
+  	#p params[:entity][:invitation_token]
+  	#p '----------------'
+#    session[:invitation_token] = params[:entity][:invitation_token]
+#    p session[:invitation_token]
     super
   end
 end

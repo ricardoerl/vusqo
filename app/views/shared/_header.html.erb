@@ -39,10 +39,10 @@
               </a>
               <ul class="list bg-white pl0 mv0 absolute z-1 ba b--light-gray tr w5 right-0 dn" id="profile-menu">
                 <li>
-                  <a href="#" class="link dim gray db pa3">Mi perfil</a>
+                  <%= link_to 'Mi perfil', entity_path(current_entity), class: "link dim gray db pa3" %>
                 </li>
                 <li>
-                  <a href="#" class="link dim gray db pa3">Configuración</a>
+                  <%= link_to 'Configuración', edit_entity_path(current_entity), class: "link dim gray db pa3" %>
                 </li>
                 <li>
                   <%= link_to 'Cerrar sesión', destroy_entity_session_path, method: :delete, class: "link dim gray db pa3" %>
