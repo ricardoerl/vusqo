@@ -1,4 +1,8 @@
 <section class="mw6 center pv4 ph2">
-  <h1 class="mb4 fw4 tc">Editar perfil</h1>
+  <% if current_entity.name.blank? %>
+    <h1 class="mb4 fw4 tc">Completar perfil</h1>
+  <% else %>
+    <h1 class="mb4 fw4 tc">Editar perfil</h1>
+  <% end %>
   <%= render 'form' %>
 </section>
