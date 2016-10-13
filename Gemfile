@@ -35,6 +35,8 @@ gem 'fog-aws'
 gem 'devise'
 gem 'devise_invitable'
 
+gem 'friendly_id'
+
 # Use High Voltage
 gem 'high_voltage'
 

@@ -45,12 +45,12 @@
     </div>
     <% @entities.each do |entity| %>
     <div class="fl w-50 w-20-m w-10-l pa2">
-      <a href=" <%= entity.website %>" class="db link dim tc">
+      <%= link_to entity_path(entity), class: "db link dim tc", target: "_blank" do %>
         <img src="<%= entity.logo.url %>" class="w-100 db br2" />
         <dl class="mt2 f6 lh-copy">
           <dd class="ml0 black truncate w-100"><%= entity.name %></dd>
         </dl>
-      </a>
+      <% end %>
     </div>
     <% end %>
     <div class="fl w-50 w-20-m w-10-l pa2">
