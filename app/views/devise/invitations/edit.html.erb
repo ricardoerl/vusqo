@@ -1,21 +1,25 @@
 <section class="mw6 center pv4 ph2">
   <div class="mb4">
     <h1 class="fw4 tc">Escoge una contraseña</h1>
-    <p class="f6 mv0 tc">¿No tienes una cuenta? <%= link_to "Registra tu empresa aquí.", page_path('apply'), class: "link dim" %></p>
   </div>
-<%= form_for resource, :as => resource_name, :url => invitation_path(resource_name), :html => { :method => :put } do |f| %>
-  <%= devise_error_messages! %>
-  <%= f.hidden_field :invitation_token %>
+  <%= form_for resource, :as => resource_name, :url => invitation_path(resource_name), :html => { :method => :put, "data-parsley-validate": true, "novalidate": true } do |f| %>
+    <%= devise_error_messages! %>
+    <%= f.hidden_field :invitation_token %>
     <% session[:invitation_token] = :invitation_token %>
-
-  <% if f.object.class.require_password_on_accepting %>
-  <%= f.label "Contraseña", class: "db fw4 lh-copy f6" %>
-  <%= f.password_field :password %></p>
-
-	<%= f.label "Confirma tu contraseña", class: "db fw4 lh-copy f6" %>
-  <%= f.password_field :password_confirmation %></p>
+    <% if f.object.class.require_password_on_accepting %>
+      <fieldset id="sign_up" class="ba b--transparent ph0 mh0">
+        <div class="mv3">
+          <%= f.label :password, "Contraseña", class: "db fw4 lh-copy f6" %>
+          <%= f.password_field :password, class: "pa2 input-reset ba br2 b--light-gray bg-transparent w-100", required: true %></p>
+        </div>
+        <div class="mv3">
+          <%= f.label :password_confirmation, "Confirma tu contraseña", class: "db fw4 lh-copy f6" %>
+          <%= f.password_field :password_confirmation, class: "pa2 input-reset ba br2 b--light-gray bg-transparent w-100", required: true %></p>
+        </div>
+      </fieldset>
+      <div class="mv3 tc">
+        <input class="ph4 pv2 input-reset br-pill ba b--purple bg-purple white" type="submit" value="Crear cuenta">
+      </div>
+    <% end %>
   <% end %>
-
-  <input class="ph4 pv2 input-reset br-pill ba b--purple bg-purple white" type="submit" value="Crear cuenta">
-<% end %>
 </section>
