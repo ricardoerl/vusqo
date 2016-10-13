@@ -8,4 +8,8 @@ class ApplicationController < ActionController::Base
       edit_entity_path(current_entity)
     end
   end
+
+  def after_sign_out_path_for(_resource)
+    new_entity_session_path
+  end
 end
