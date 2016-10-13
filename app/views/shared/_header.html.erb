@@ -34,8 +34,18 @@
           <% else %>
             <li class="relative">
               <a href="#" class="link dim gray db pv3" id="profile-menu-link">
-                <span class="v-mid mr1">Hola, <span class="dn dib-ns purple"><%= current_entity.name %></span></span>
-                <img src="<%= current_entity.logo.url %>" width="30" height="30" class="dib v-mid br-100" alt="Logo">
+                <% if current_entity.name.blank? %>
+                  <span class="v-mid mr1">Bienvenido</span></span>
+                <% else %>
+                  <span class="v-mid mr1">Hola, <span class="dn dib-ns purple"><%= current_entity.name %></span></span>
+                <% end %>
+                <% if current_entity.logo.url.blank? %>
+                  <svg id="i-user" viewBox="0 0 32 32" width="30" height="30" class="dib v-mid" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
+                    <path d="M22 11 C22 16 19 20 16 20 13 20 10 16 10 11 10 6 12 3 16 3 20 3 22 6 22 11 Z M4 30 L28 30 C28 21 22 20 16 20 10 20 4 21 4 30 Z" />
+                  </svg>
+                <% else %>
+                  <img src="<%= current_entity.logo.url %>" width="30" height="30" class="dib v-mid br-100" alt="Logo">
+                <% end %>
               </a>
               <ul class="list bg-white pl0 mv0 absolute z-1 ba b--light-gray tr w5 right-0 dn" id="profile-menu">
                 <li>
