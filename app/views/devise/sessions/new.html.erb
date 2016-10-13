@@ -6,7 +6,7 @@
   <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {"data-parsley-validate": true, "novalidate": true}) do |f| %>
     <fielset class="mb2 tc">
       <% if notice %>
-        <div class="bg-light-blue pa2 br2">
+        <div class="bg-green-blue pa2 br2">
           <%= notice %>
         </div>
       <% end %>
@@ -18,11 +18,11 @@
     </fielset>
     <fieldset id="sign_up" class="ba b--transparent ph0 mh0">
       <div class="mv3">
-        <%= f.label "Correo electrónico", class: "db fw4 lh-copy f6" %>
+        <%= f.label :email, "Correo electrónico", class: "db fw4 lh-copy f6" %>
         <%= f.email_field :email, class: "pa2 input-reset ba br2 b--light-gray bg-transparent w-100", required: true %>
       </div>
       <div class="mv3">
-        <%= f.label :password, class: "db fw4 lh-copy f6" %><br />
+        <%= f.label :password, class: "db fw4 lh-copy f6" %>
         <%= f.password_field :password, autocomplete: "off", class: "b pa2 input-reset ba br2 b--light-gray bg-transparent w-100", required: true %>
       </div>
     </fieldset>
@@ -31,6 +31,6 @@
     </div>
   <% end %>
   <div class="pt4 tc">
-    <%= link_to "¿Olvidaste tu contraseña? Click aquí.", new_password_path(resource_name), class: "f6 link dim db" %>
+    <p class="f6 mv0">¿Olvidaste tu contraseña? <%= link_to "Click aquí.", new_password_path(resource_name), class: "link dim" %></p>
   </div>
 </section>
