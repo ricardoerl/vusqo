@@ -1,0 +1,27 @@
+<section class="mw6 center pv4 ph2">
+  <h1 class="mb4 fw4 tc">Registrar una empresa</h1>
+  <p class="v3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime quod nihil, inventore commodi placeat quam ullam, quos esse possimus deserunt culpa error aliquam id reprehenderit minima unde sint. Illo, odit.</p>
+  <ul>
+    <li>Lorem ipsum dolor sit amet.</li>
+  </ul>
+  <%= form_for(@request) do |f| %>
+    <fieldset id="sign_up" class="ba b--transparent ph0 mh0">
+      <div class="mv3">
+        <label class="db fw4 lh-copy f6" for="apply-company">Nombre de la empresa</label>
+        <%= f.text_field :name, class: "pa2 input-reset ba br2 b--light-gray bg-transparent w-100 measure", required:true %>
+      </div>
+      <div class="mv3">
+        <label class="db fw4 lh-copy f6" for="apply-email">Correo electrónico</label>
+        <%= f.email_field :email, class: "pa2 input-reset ba br2 b--light-gray bg-transparent w-100 measure", required:true %>
+      </div>
+      <div class="mv3">
+        <label class="db fw4 lh-copy f6" for="apply-site">Sitio web</label>
+        <%= f.text_field :website, class: "pa2 input-reset ba br2 b--light-gray bg-transparent w-100 measure", required:true %>
+      </div>
+    </fieldset>
+    <div class="mv3 tc">
+      <input class="ph4 pv2 input-reset br-pill ba b--purple bg-purple white" type="submit" value="Enviar">
+    </div>
+  <% end %>
+    
+</section>
