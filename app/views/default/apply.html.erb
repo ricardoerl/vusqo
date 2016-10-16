@@ -1,11 +1,14 @@
 <section class="mw6 center pv4 ph2">
   <h1 class="mb4 fw4 tc">Registrar una empresa</h1>
-  <p class="v3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime quod nihil, inventore commodi placeat quam ullam, quos esse possimus deserunt culpa error aliquam id reprehenderit minima unde sint. Illo, odit.</p>
-  <ul>
-    <li>Lorem ipsum dolor sit amet.</li>
-  </ul>
-  <%= form_for(@request) do |f| %>
+  <div class="bg-washed-green pv2 ph3 br2">
+    <p>Agredecemos tu interés por ayudarnos a crear el directorio creativo más completo de El Salvador.</p>
+    <p>Vusqo se encuentra en versión beta por lo que el registro a la plataforma es solamente por invitación. <strong>Una vez que solicites acceso, te enviaremos tu invitación lo antes posible.</strong></p>
+  </div>
+  <%= form_for(@request, :html => {"data-parsley-validate" => true}) do |f| %>
     <fieldset id="sign_up" class="ba b--transparent ph0 mh0">
+      <div class="pv3 bb b--light-gray">
+        <h2 class="f6 fw4 purple mv0 ttu">Solicitar acceso</h2>
+      </div>
       <div class="mv3">
         <%= f.label :name, "Nombre de la empresa", class: "db fw4 lh-copy f6" %>
         <%= f.text_field :name, class: "pa2 input-reset ba br2 b--light-gray bg-transparent w-100 measure", required:true %>
@@ -13,6 +16,7 @@
       <div class="mv3">
         <%= f.label :email, "Correo electrónico", class: "db fw4 lh-copy f6" %>
         <%= f.email_field :email, class: "pa2 input-reset ba br2 b--light-gray bg-transparent w-100 measure", required:true %>
+        <span class="dib f6 gray mv1">Te recomendamos utilizar el correo institucional de tu empresa para validar tu invitación.</span>
       </div>
       <div class="mv3">
         <%= f.label :website, "Sitio web", class: "db fw4 lh-copy f6" %>
@@ -20,7 +24,7 @@
       </div>
     </fieldset>
     <div class="mv3 tc">
-      <input class="ph4 pv2 input-reset br-pill ba b--purple bg-purple white" type="submit" value="Enviar">
+      <input class="ph4 pv2 input-reset br-pill ba b--purple bg-purple white" type="submit" value="Solicitar acceso">
     </div>
   <% end %>
 
