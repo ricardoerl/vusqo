@@ -1,6 +1,6 @@
 <section class="mw6 center pv4 ph2">
   <h1 class="mb4 fw4 tc">Registrar una empresa</h1>
-  <div class="bg-washed-green pv2 ph3 br2">
+  <div class="bg-near-white pv2 ph3 br2">
     <p>Agredecemos tu interés por ayudarnos a crear el directorio creativo más completo de El Salvador.</p>
     <p>Vusqo se encuentra en versión beta por lo que el registro a la plataforma es solamente por invitación. <strong>Una vez que solicites acceso, te enviaremos tu invitación lo antes posible.</strong></p>
   </div>
@@ -9,6 +9,18 @@
       <div class="pv3 bb b--light-gray">
         <h2 class="f6 fw4 purple mv0 ttu">Solicitar acceso</h2>
       </div>
+      <fielset class="mb2 tc">
+        <% if notice %>
+          <div class="bg-washed-green pa2 br2">
+            <%= notice %>
+          </div>
+        <% end %>
+        <% if alert %>
+          <div class="bg-washed-yellow pa2 br2">
+            <%= alert %>
+          </div>
+        <% end %>
+      </fielset>
       <div class="mv3">
         <%= f.label :name, "Nombre de la empresa", class: "db fw4 lh-copy f6" %>
         <%= f.text_field :name, class: "pa2 input-reset ba br2 b--light-gray bg-transparent w-100 measure", required:true %>
@@ -16,7 +28,7 @@
       <div class="mv3">
         <%= f.label :email, "Correo electrónico", class: "db fw4 lh-copy f6" %>
         <%= f.email_field :email, class: "pa2 input-reset ba br2 b--light-gray bg-transparent w-100 measure", required:true %>
-        <span class="dib f6 gray mv1">Te recomendamos utilizar el correo institucional de tu empresa para validar tu invitación.</span>
+        <span class="dib f6 gray">Te recomendamos utilizar el correo institucional de tu empresa para validar tu invitación.</span>
       </div>
       <div class="mv3">
         <%= f.label :website, "Sitio web", class: "db fw4 lh-copy f6" %>

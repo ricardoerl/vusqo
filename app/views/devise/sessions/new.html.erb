@@ -6,12 +6,12 @@
   <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {"data-parsley-validate": true, "novalidate": true}) do |f| %>
     <fielset class="mb2 tc">
       <% if notice %>
-        <div class="bg-green white pa2 br2">
+        <div class="bg-washed-green pa2 br2">
           <%= notice %>
         </div>
       <% end %>
       <% if alert %>
-        <div class="bg-yellow black pa2 br2">
+        <div class="bg-washed-yellow pa2 br2">
           <%= alert %>
         </div>
       <% end %>

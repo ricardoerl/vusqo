@@ -1,10 +1,10 @@
 class RequestsController < ApplicationController
   def create
-  	@request = Request.new(request_params)
+    @request = Request.new(request_params)
 
     respond_to do |format|
       if @request.save
-        format.html { redirect_to entities_url, notice: 'Request was successfully created.' }
+        format.html { redirect_to registro_url, notice: 'Tu solicitud fue enviada con éxito.' }
         format.json { render :show, status: :created, location: @request }
       else
         format.html { render :new }
@@ -15,7 +15,7 @@ class RequestsController < ApplicationController
 
   private
 
-   def request_params
-    params.require(:request).permit(:name,:email, :website)
-   end
+  def request_params
+    params.require(:request).permit(:name, :email, :website)
+  end
 end
