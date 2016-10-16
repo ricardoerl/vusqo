@@ -3,7 +3,12 @@ Rails.application.routes.draw do
 
   # get 'default/index'
   root to: 'default#index'
-  devise_for :entities, controllers: { invitations: 'entities/invitations' }
+  devise_for :entities, controllers: { invitations: 'entities/invitations' }, skip: [:sessions]
+  as :entity do
+    get 'empresas/login' => 'devise/sessions#new', :as => :new_entity_session
+    post 'empresas/login' => 'devise/sessions#create', :as => :entity_session
+    delete 'empresas/logout' => 'devise/sessions#destroy', :as => :destroy_entity_session
+  end
   resources :entities, path: 'empresas'
   resources :requests, only: [:create]
 

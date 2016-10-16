@@ -1,7 +1,7 @@
 <section class="mw6 center pv4 ph2">
   <div class="mb4">
     <h1 class="fw4 tc">Iniciar sesión</h1>
-    <p class="f6 mv0 tc">¿No tienes una cuenta? <%= link_to "Registra tu empresa aquí.", page_path('apply'), class: "link dim" %></p>
+    <p class="f6 mv0 tc">¿No tienes una cuenta? <%= link_to "Registra tu empresa aquí.", registro_path, class: "link dim" %></p>
   </div>
   <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {"data-parsley-validate": true, "novalidate": true}) do |f| %>
     <fielset class="mb2 tc">
@@ -22,7 +22,7 @@
         <%= f.email_field :email, class: "pa2 input-reset ba br2 b--light-gray bg-transparent w-100", required: true %>
       </div>
       <div class="mv3">
-        <%= f.label :password, class: "db fw4 lh-copy f6" %>
+        <%= f.label :password, "Contraseña", class: "db fw4 lh-copy f6" %>
         <%= f.password_field :password, autocomplete: "off", class: "b pa2 input-reset ba br2 b--light-gray bg-transparent w-100", required: true %>
       </div>
     </fieldset>
@@ -30,7 +30,7 @@
       <input class="ph4 pv2 input-reset br-pill ba b--purple bg-purple white" type="submit" value="Iniciar sesión">
     </div>
   <% end %>
-  <div class="pt4 tc">
+  <!-- <div class="pt4 tc">
     <p class="f6 mv0">¿Olvidaste tu contraseña? <%= link_to "Click aquí.", new_password_path(resource_name), class: "link dim" %></p>
-  </div>
+  </div> -->
 </section>
