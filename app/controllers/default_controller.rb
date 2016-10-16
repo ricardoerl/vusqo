@@ -4,6 +4,6 @@ class DefaultController < ApplicationController
   end
 
   def apply
-  	@request = Request.new
+    @request = Request.new
   end
 end
