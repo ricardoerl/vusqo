@@ -19,7 +19,7 @@ es:
     mailer:
       invitation_instructions:
         subject: 'Invitación Vusqo'
-        hello: 'Hola %{email}'
+        hello: 'Hola %{email}!'
         someone_invited_you: 'Te hemos invitado para crear tu cuenta en Vusqo, el directorio creativo de El Salvador.'
         accept: 'Aceptar invitación'
         ignore: 'Si no quieres aceptar la invitación, por favor ignora este email.'

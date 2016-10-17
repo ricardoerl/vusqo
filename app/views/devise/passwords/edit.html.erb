@@ -1,25 +1,22 @@
-<h2>Change your password</h2>
-
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
-  <%= devise_error_messages! %>
-  <%= f.hidden_field :reset_password_token %>
-
-  <div class="field">
-    <%= f.label :password, "New password" %><br />
-    <% if @minimum_password_length %>
-      <em>(<%= @minimum_password_length %> characters minimum)</em><br />
-    <% end %>
-    <%= f.password_field :password, autofocus: true, autocomplete: "off" %>
+<section class="mw6 center pv4 ph2">
+  <div class="mb4">
+    <h1 class="fw4 tc">Cambiar contraseña</h1>
   </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation, "Confirm new password" %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Change my password" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+  <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put, "data-parsley-validate": true, "novalidate": true }) do |f| %>
+    <%= devise_error_messages! %>
+    <%= f.hidden_field :reset_password_token %>
+    <fieldset class="ba b--transparent ph0 mh0">
+      <div class="mv3">
+        <%= f.label :password, "Nueva contraseña", class: "db fw4 lh-copy f6" %>
+        <%= f.password_field :password, class: "b pa2 input-reset ba br2 b--light-gray bg-transparent w-100", autofocus: true, autocomplete: "off", required: true %>
+      </div>
+      <div class="mv3">
+        <%= f.label :password_confirmation, "Confirmar nueva contraseña", class: "db fw4 lh-copy f6" %>
+        <%= f.password_field :password_confirmation, class: "b pa2 input-reset ba br2 b--light-gray bg-transparent w-100", autocomplete: "off", required: true %>
+      </div>
+    </fieldset>
+    <div class="mv3 tc">
+      <input class="ph4 pv2 input-reset br-pill ba b--purple bg-purple white" type="submit" value="Cambiar contraseña">
+    </div>
+  <% end %>
+</section>
