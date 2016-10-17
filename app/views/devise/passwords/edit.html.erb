@@ -8,11 +8,12 @@
     <fieldset class="ba b--transparent ph0 mh0">
       <div class="mv3">
         <%= f.label :password, "Nueva contraseña", class: "db fw4 lh-copy f6" %>
-        <%= f.password_field :password, class: "b pa2 input-reset ba br2 b--light-gray bg-transparent w-100", autofocus: true, autocomplete: "off", required: true %>
+        <%= f.password_field :password, class: "b pa2 input-reset ba br2 b--light-gray bg-transparent w-100", minlength: 6, autofocus: true, autocomplete: "off", required: true %>
+        <span class="dib f6 gray">Te recomendamos utilizar más de 6 caracteres.</span>
       </div>
       <div class="mv3">
         <%= f.label :password_confirmation, "Confirmar nueva contraseña", class: "db fw4 lh-copy f6" %>
-        <%= f.password_field :password_confirmation, class: "b pa2 input-reset ba br2 b--light-gray bg-transparent w-100", autocomplete: "off", required: true %>
+        <%= f.password_field :password_confirmation, class: "b pa2 input-reset ba br2 b--light-gray bg-transparent w-100", minlength: 6, autocomplete: "off", required: true %>
       </div>
     </fieldset>
     <div class="mv3 tc">
