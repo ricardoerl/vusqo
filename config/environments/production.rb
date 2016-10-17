@@ -25,7 +25,19 @@ Rails.application.configure do
   # Do not fallback to assets pipeline if a precompiled asset is missed.
   config.assets.compile = false
 
-   config.action_mailer.default_url_options = { host: 'vusqo.com'}
+  config.action_mailer.default_url_options = { host: 'vusqo.com'}
+  config.action_mailer.asset_host = 'http://vusqo.com'
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    :address        => 'smtp.sendgrid.net',
+    :port           => '587',
+    :authentication => :plain,
+    :user_name      => ENV['SENDGRID_USERNAME'],
+    :password       => ENV['SENDGRID_PASSWORD'],
+    :domain         => 'heroku.com',
+    :enable_starttls_auto => true
+}
 
   # `config.assets.precompile` and `config.assets.version` have moved to config/initializers/assets.rb
 
