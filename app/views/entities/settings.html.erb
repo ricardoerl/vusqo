@@ -1,0 +1,25 @@
+<% title 'Cambiar contraseña' %>
+
+<section class="mw6 center pv4 ph2">
+  
+  <h1 class="mb4 fw4 tc">Cambiar contraseña</h1>
+  <%= form_for(@entity, url: update_password_path, :html => {"data-parsley-validate" => true}) do |f| %>
+  <fieldset class="ba b--transparent ph0 mh0">
+    <div class="pv3 bb b--light-gray">
+      <h2 class="f6 fw4 purple mv0 ttu">Información general</h2>
+    </div>
+    <div class="mv3">
+      <%= f.label :password, "Contraseña", class: "db fw4 lh-copy f6" %>
+      <%= f.password_field :password, class: "pa2 input-reset ba br2 b--light-gray bg-transparent w-100", required: true %>
+    </div>
+    <div class="mv3">
+      <%= f.label :password_confirmation, "Confirmar contraseña", class: "db fw4 lh-copy f6" %>
+      <%= f.password_field :password_confirmation, class: "pa2 input-reset ba br2 b--light-gray bg-transparent w-100", required: true %>
+    </div>
+    <div class="mv3 tc">
+    	<input class="ph4 dim pointer pv2 input-reset br-pill ba b--purple bg-purple white" type="submit" value="Guardar">
+  	</div>
+    </fieldset>
+
+    <% end %>
+</section>

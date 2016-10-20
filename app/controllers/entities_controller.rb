@@ -1,6 +1,6 @@
 class EntitiesController < ApplicationController
-  #before_filter :authenticate_user!
-  before_action :set_entity, only: [:show, :edit, :update, :destroy]
+  before_filter :authenticate_entity!, except: [:index, :show]
+  before_action :set_entity, only: [:show, :edit, :update, :destroy, :cambiar_contrasena]
 
   # GET /entities
   # GET /entities.json
@@ -24,6 +24,21 @@ class EntitiesController < ApplicationController
       render :edit
     else
       redirect_to root_path, notice: 'Ha ocurrido un error, por favor abre el link de la invitación desde el correo que te enviamos.'
+    end
+  end
+
+  def settings
+    @entity = current_entity
+  end
+
+  def update_password
+    @entity = Entity.find(current_entity.id)
+    if @entity.update(entity_params)
+      # Sign in the entity by passing validation in case their password changed
+      bypass_sign_in(@entity)
+      redirect_to root_path
+    else
+      render "update_password"
     end
   end
 
@@ -76,6 +91,7 @@ class EntitiesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def entity_params
-      params.require(:entity).permit(:name,:description, :website, :phone, :contact_email, :facebook, :twitter, :instagram, :medium, :linkedin, :behance, :github, :pinterest, :youtube, :gplus, :logo)
+      params.require(:entity).permit(:name,:description, :website, :phone, :contact_email, :facebook, :twitter, :instagram,
+                                     :medium, :linkedin, :behance, :github, :pinterest, :youtube, :gplus, :logo, :password, :password_confirmation)
     end
 end
