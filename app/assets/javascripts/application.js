@@ -13,9 +13,9 @@
       e.preventDefault();
       profileMenu.toggleClass('dn');
     });
-    // profileMenu.on('mouseleave', function () {
-    //   $(this).toggleClass('dn');
-    // });
+    profileMenu.on('mouseleave', function () {
+      $(this).toggleClass('dn');
+    });
   }
 
   $(".social-share").on("click", function(e) {
