@@ -1,5 +1,17 @@
 <% title @entity.name %>
 <% description @entity.description %>
+<% set_meta_tags og: {
+  title: @entity.name + " en Vusqo.com",
+  description: @entity.description,
+  image: image_url("share-image.png"),
+  url: request.original_url,
+  site_name: "Vusqo"
+} %>
+<% set_meta_tags twitter: {
+  card: "summary_large_image",
+  site: "@vusqo_",
+  creator: "@vusqo_"
+} %>
 
 <section class="mw8 center relative pv4 ph3 tc">
   <img src="<%= @entity.logo.url %>" class="w4 db ba b--light-gray center br2" />
