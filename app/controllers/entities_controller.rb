@@ -5,7 +5,7 @@ class EntitiesController < ApplicationController
   # GET /entities
   # GET /entities.json
   def index
-    @entities = Entity.where("name is NOT NULL")#.where(logo: "is NOT NULL")
+    @entities = Entity.where('name is NOT NULL') # .where(logo: "is NOT NULL")
   end
 
   # GET /entities/1
@@ -38,7 +38,7 @@ class EntitiesController < ApplicationController
       bypass_sign_in(@entity)
       redirect_to root_path
     else
-      render "update_password"
+      render 'update_password'
     end
   end
 
@@ -84,14 +84,14 @@ class EntitiesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_entity
-      @entity = Entity.friendly.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def entity_params
-      params.require(:entity).permit(:name,:description, :website, :phone, :contact_email, :facebook, :twitter, :instagram,
-                                     :medium, :linkedin, :behance, :github, :pinterest, :youtube, :gplus, :logo, :password, :password_confirmation)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_entity
+    @entity = Entity.friendly.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def entity_params
+    params.require(:entity).permit(:name, :description, :website, :phone, :contact_email, :facebook, :twitter, :instagram, :medium, :linkedin, :behance, :github, :pinterest, :youtube, :gplus, :logo, :email, :password, :password_confirmation)
+  end
 end
