@@ -1,6 +1,18 @@
 <section class="mw6 center pv4 ph2">
   <h1 class="mb4 fw4 tc">Configuración</h1>
   <form action="sign-up_submit" method="get" accept-charset="utf-8" data-parsley-validate novalidate>
+    <fielset class="mb2 tc">
+      <% if notice %>
+        <div class="bg-washed-green pa2 br2">
+          <%= notice %>
+        </div>
+      <% end %>
+      <% if alert %>
+        <div class="bg-washed-yellow pa2 br2">
+          <%= alert %>
+        </div>
+      <% end %>
+    </fielset>
     <fieldset id="sign_up" class="ba b--transparent ph0 mh0">
       <div class="pv3 bb b--light-gray">
         <h2 class="f6 fw4 gray mv0 ttu">Cuenta</h2>

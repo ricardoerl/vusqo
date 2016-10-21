@@ -33,12 +33,14 @@ class EntitiesController < ApplicationController
 
   def update_password
     @entity = Entity.find(current_entity.id)
+    params[:entity].delete :password if params[:entity][:password].blank?
+    params[:entity].delete :password_confirmation if params[:entity][:password_confirmation].blank?
     if @entity.update(entity_params)
       # Sign in the entity by passing validation in case their password changed
       bypass_sign_in(@entity)
-      redirect_to root_path
+      redirect_to configuracion_path, notice: 'Tu cuenta fue actualizada correctamente.'
     else
-      render 'update_password'
+      redirect_to configuracion_path, alert: 'Tu cuenta no pudo ser actualizada.'
     end
   end
 
@@ -63,7 +65,7 @@ class EntitiesController < ApplicationController
   def update
     respond_to do |format|
       if @entity.update(entity_params)
-        format.html { redirect_to entities_url, notice: 'Entity was successfully updated.' }
+        format.html { redirect_to edit_entity_path, notice: 'Tu perfil fue actualizado correctamente.' }
         format.json { render :show, status: :ok, location: @entity }
       else
         p @entity.errors

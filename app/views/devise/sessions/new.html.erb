@@ -6,18 +6,6 @@
     <p class="f6 mv0 tc">¿No tienes una cuenta? <%= link_to "Registra tu empresa aquí.", registro_path, class: "link dim" %></p>
   </div>
   <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {"data-parsley-validate": true, "novalidate": true}) do |f| %>
-    <fielset class="mb2 tc">
-      <% if notice %>
-        <div class="bg-washed-green pa2 br2">
-          <%= notice %>
-        </div>
-      <% end %>
-      <% if alert %>
-        <div class="bg-washed-yellow pa2 br2">
-          <%= alert %>
-        </div>
-      <% end %>
-    </fielset>
     <fieldset class="ba b--transparent ph0 mh0">
       <div class="mv3">
         <%= f.label :email, "Correo electrónico", class: "db fw4 lh-copy f6" %>

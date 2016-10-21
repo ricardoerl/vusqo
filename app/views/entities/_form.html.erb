@@ -11,6 +11,7 @@
       <% end %>
       <%= f.label :logo, "Logo", class: "db fw4 lh-copy f6" %>
       <%= f.file_field :logo, class: "pa2 input-reset ba br2 b--light-gray bg-transparent center" %>
+      <span class="dib f6 gray">Te recomendamos utilizar una imagen de 300x300.</span>
     </div>
     <div class="mv3">
       <%= f.label :name, "Nombre", class: "db fw4 lh-copy f6" %>
@@ -26,7 +27,7 @@
     </div>
     <div class="mv3">
       <%= f.label :phone, "Teléfono", class: "db fw4 lh-copy f6" %>
-      <%= f.text_field :phone, class: "pa2 input-reset ba br2 b--light-gray bg-transparent w-100", required: true %>
+      <%= f.text_field :phone, class: "pa2 input-reset ba br2 b--light-gray bg-transparent w-100", "data-parsley-type": "digits" %>
     </div>
     <div class="mv3">
       <%= f.label :contact_email, "Correo electrónico de contacto", class: "db fw4 lh-copy f6" %>

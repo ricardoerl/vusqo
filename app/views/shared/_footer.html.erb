@@ -22,3 +22,14 @@
     </div>
   </div>
 </footer>
+
+<script type="text/javascript">
+  window.onload = function() {
+    <% if notice %>
+      notie.alert(1, '<%= notice %>', 2);
+    <% end %>
+    <% if alert %>
+      notie.alert(2, '<%= alert %>', 2);
+    <% end %>
+  };
+</script>
