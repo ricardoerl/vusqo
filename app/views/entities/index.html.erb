@@ -3,7 +3,11 @@
 
 <section class="mw8 center pv3 ph2">
   <div class="pv3 ph2">
+  <% if @entities.blank? %>
+    <h2 class="f6 fw4 gray mv0 ttu">No Hay empresas registradas</h2>
+  <% else %>
     <h2 class="f6 fw4 gray mv0 ttu">Empresas registradas</h2>
+  <% end %>
   </div>
   <div class="cf">
     <% @entities.each do |entity| %>

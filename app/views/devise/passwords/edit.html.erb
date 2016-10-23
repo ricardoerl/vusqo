@@ -1,8 +1,8 @@
 <% title 'Cambiar contraseña' %>
 
-<section class="mw6 center pv4 ph2">
+<section class="mw6 center pv4 ph3">
   <div class="mb4">
-    <h1 class="fw4 tc">Cambiar contraseña</h1>
+    <h1 class="f3 f2-ns fw4 tc">Cambiar contraseña</h1>
   </div>
   <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put, "data-parsley-validate": true, "novalidate": true }) do |f| %>
     <%= devise_error_messages! %>

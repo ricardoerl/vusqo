@@ -5,12 +5,12 @@
     </div>
     <div class="cf mv3">
       <% if current_entity.logo.url.blank? %>
-        <img src="http://placehold.it/300?text=Logo" class="fr w3 db center br2" />
+        <img src="http://placehold.it/300?text=Logo" class="fn fr-ns w3 db center br2" />
       <% else %>
-        <img src="<%= current_entity.logo.url %>" class="fr w3 db center br2" />
+        <img src="<%= current_entity.logo.url %>" class="fn fr-ns w3 db center br2" />
       <% end %>
       <%= f.label :logo, "Logo", class: "db fw4 lh-copy f6" %>
-      <%= f.file_field :logo, class: "pa2 input-reset ba br2 b--light-gray bg-transparent center" %>
+      <%= f.file_field :logo, class: "pv2 input-reset ba br2 b--light-gray bg-transparent w-100" %>
       <span class="dib f6 gray">Te recomendamos utilizar una imagen de 300x300.</span>
     </div>
     <div class="mv3">
