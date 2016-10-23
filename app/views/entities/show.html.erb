@@ -3,7 +3,11 @@
 <% set_meta_tags og: {
   title: @entity.name + " en Vusqo.com",
   description: @entity.description,
-  image: image_url("share-image.png"),
+  image: {
+    _: image_url(@entity.logo.url),
+    width: 200,
+    height: 200,
+  },
   url: request.original_url,
   site_name: "Vusqo"
 } %>
