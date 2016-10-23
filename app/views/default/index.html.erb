@@ -11,10 +11,10 @@
   </div>
 </section>
 
-<section class="mw8 center ph3 pv1 pv3-ns">
-  <div class="pv3 ph2 tc">
+<section class="mw8 center ph3 pv2 pv3-ns">
+  <div class="pv3 ph2">
   <% if @entities.blank? %>
-    <h2 class="f6 fw4 gray mv0 ttu">No Hay empresas registradas :-(</h2>
+    <!-- <h2 class="f6 fw4 gray mv0 ttu">No Hay empresas registradas :-(</h2> -->
   <% else %>
     <h2 class="f6 fw4 gray mv0 ttu">Últimas empresas registradas</h2>
   <% end %>
@@ -36,4 +36,24 @@
     <%= link_to "Ver todas las empresas", entities_path, class: "f6 link dim dib br-pill gray ba b--light-gray pv2 ph3"%>
   </div>
   <% end %>
+</section>
+
+<section class="mw8 center ph3 pv2 pv3-ns">
+  <div class="pv3 ph2">
+    <h2 class="f6 fw4 gray mv0 ttu">¿Por qué registrarse en Vusqo?</h2>
+  </div>
+  <div class="cf">
+    <div class="fl w-33 pa2">
+      <h3 class="f2 fw4 b h3 lh-solid mv3">Conecta con más personas</h3>
+      <p class="mt4">Crea tu perfil y permite que usuarios conecten de forma fácil contigo a través de nuestra plataforma.</p>
+    </div>
+    <div class="fl w-33 pa2">
+      <h3 class="f2 fw4 b h3 lh-solid mv3">Crece en nuestra comunidad</h3>
+      <p class="mt4">Se parte de una comunidad creativa en constante crecimiento en El Salvador.</p>
+    </div>
+    <div class="fl w-33 pa2">
+      <h3 class="f2 fw4 b h3 lh-solid mv3">Descubre nuevas herramientas</h3>
+      <p class="mt4">Conoce y utiliza de primera mano las nuevas características de nuestra plataforma.</p>
+    </div>
+  </div>
 </section>
