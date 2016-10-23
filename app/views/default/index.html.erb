@@ -11,13 +11,10 @@
   </div>
 </section>
 
+<% if !@entities.blank? %>
 <section class="mw8 center ph3 pv2 pv3-ns">
   <div class="pv3 ph2">
-  <% if @entities.blank? %>
-    <!-- <h2 class="f6 fw4 gray mv0 ttu">No Hay empresas registradas :-(</h2> -->
-  <% else %>
     <h2 class="f6 fw4 gray mv0 ttu">Últimas empresas registradas</h2>
-  <% end %>
   </div>
   <div class="cf">
     <% @entities.each do |entity| %>
@@ -31,12 +28,11 @@
     </div>
     <% end %>
   </div>
-  <% if !@entities.blank? %>
   <div class="pv1 tc">
     <%= link_to "Ver todas las empresas", entities_path, class: "f6 link dim dib br-pill gray ba b--light-gray pv2 ph3"%>
   </div>
-  <% end %>
 </section>
+<% end %>
 
 <section class="mw8 center ph3 pv2 pv3-ns">
   <div class="pv3 ph2">
