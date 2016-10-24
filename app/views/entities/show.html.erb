@@ -3,7 +3,11 @@
 <% set_meta_tags og: {
   title: @entity.name + " en Vusqo.com",
   description: @entity.description,
-  image: image_url("share-image.png"),
+  image: {
+    _: image_url(@entity.logo.url),
+    width: 200,
+    height: 200,
+  },
   url: request.original_url,
   site_name: "Vusqo"
 } %>
@@ -14,10 +18,10 @@
 } %>
 
 <section class="mw8 center relative pv4 ph3 tc">
-  <img src="<%= @entity.logo.url %>" class="w4 db ba b--light-gray center br2" />
+  <img src="<%= @entity.logo.url %>" class="w3 w4-ns db ba b--light-gray center br2" />
   <div class="mw7 center">
-    <h1 class="mv4"><%= @entity.name %></h1>
-    <p class="mv0 f4 black"><%= @entity.description %></p>
+    <h1 class="f3 f1-nsmv4"><%= @entity.name %></h1>
+    <p class="mv0 f5 f4-ns black"><%= @entity.description %></p>
     <div class="mv4">
       <a href="<%= @entity.website %>" target="_blank" class="f6 link dim dib br-pill black ba b--black pv2 ph3 mh1-ns v-mid mv2"><%= @entity.website %></a>
       <% if !@entity.phone.blank? %>

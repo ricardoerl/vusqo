@@ -3,7 +3,15 @@
 
 <section class="mw8 center pv3 ph2">
   <div class="pv3 ph2">
+  <% if @entities.blank? %>
+    <div class="pv4 tc">
+      <h1 class="f-headline">:-(</h1>
+      <p class="mv0">Todavía no hay empresas registradas.</p>
+      <%= link_to "Registrar una empresa", registro_path, class: "f6 link dim dib br-pill bg-purple white pv2 ph3 mv3" %>
+    </div>
+  <% else %>
     <h2 class="f6 fw4 gray mv0 ttu">Empresas registradas</h2>
+  <% end %>
   </div>
   <div class="cf">
     <% @entities.each do |entity| %>

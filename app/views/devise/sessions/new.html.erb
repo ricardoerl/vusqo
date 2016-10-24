@@ -1,8 +1,8 @@
 <% title 'Iniciar sesión' %>
 
-<section class="mw6 center pv4 ph2">
+<section class="mw6 center pv4 ph3">
   <div class="mb4">
-    <h1 class="fw4 tc">Iniciar sesión</h1>
+    <h1 class="f3 f2-ns fw4 tc">Iniciar sesión</h1>
     <p class="f6 mv0 tc">¿No tienes una cuenta? <%= link_to "Registra tu empresa aquí.", registro_path, class: "link dim" %></p>
   </div>
   <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {"data-parsley-validate": true, "novalidate": true}) do |f| %>
