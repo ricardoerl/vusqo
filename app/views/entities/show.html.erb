@@ -25,7 +25,7 @@
     <div class="mv4">
       <a href="<%= @entity.website %>" target="_blank" class="f6 link dim dib br-pill black ba b--black pv2 ph3 mh1-ns v-mid mv2"><%= @entity.website %></a>
       <% if !@entity.phone.blank? %>
-      <a href="tel:2276-6576" class="f6 link dim dib br-pill black ba b--black pv2 ph3 mh1-ns v-mid mv2"><%= @entity.phone %></a>
+      <a href="tel:<%= @entity.phone %>" class="f6 link dim dib br-pill black ba b--black pv2 ph3 mh1-ns v-mid mv2"><%= @entity.phone %></a>
       <% end %>
       <a href="mailto:<%= @entity.contact_email %>" class="link dim dib pa2 black ba b--black br-100 mh1-ns v-mid mv2">
         <svg id="i-mail" viewBox="0 0 32 32" width="16" height="16" class="db" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
