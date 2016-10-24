@@ -34,6 +34,7 @@ gem 'meta-tags'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'fog-aws'
+gem 'cloudinary'
 
 gem 'devise'
 gem 'devise_invitable'
