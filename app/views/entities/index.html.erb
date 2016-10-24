@@ -17,7 +17,7 @@
     <% @entities.each do |entity| %>
     <div class="fl w-50 w-20-m w-10-l pa2">
       <%= link_to entity_path(entity), class: "db link dim tc" do %>
-        <img src="<%= entity.logo.url %>" class="w-100 db ba b--light-gray br2" alt="Logo de <%= @entity.name %>" />
+        <img src="<%= entity.logo.url %>" class="w-100 db ba b--light-gray br2" alt="Logo de <%= entity.name %>" />
         <dl class="mt2 f6 lh-copy">
           <dd class="ml0 black truncate w-100"><%= entity.name %></dd>
         </dl>
