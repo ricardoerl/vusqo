@@ -7,7 +7,7 @@
       <% if current_entity.logo.url.blank? %>
         <img src="http://placehold.it/300?text=Logo" class="fn fr-ns w3 db center br2" />
       <% else %>
-        <img src="<%= current_entity.logo.url %>" class="fn fr-ns w3 db center br2" />
+        <img src="<%= current_entity.logo.url %>" class="fn fr-ns w3 db center br2" alt="Logo" />
       <% end %>
       <%= f.label :logo, "Logo", class: "db fw4 lh-copy f6" %>
       <%= f.file_field :logo, class: "pv2 input-reset ba br2 b--light-gray bg-transparent w-100" %>
