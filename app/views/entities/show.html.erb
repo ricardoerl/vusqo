@@ -21,7 +21,12 @@
   <img src="<%= @entity.logo.url %>" class="w3 w4-ns db ba b--light-gray center br2" alt="Logo de <%= @entity.name %>" />
   <div class="mw7 center">
     <h1 class="f3 f1-nsmv4"><%= @entity.name %></h1>
-    <p class="mv0 f5 f4-ns black"><%= @entity.description %></p>
+    <p class="mv0 f5 f4-ns black" id="textDescription"><%= @entity.description %></p>
+    <% if (@entity.description.length > 230) %>
+    <div class="mv1">
+      <a href="#" id="moreDescription" class="link bg-transparent bn bt b--light-gray">Ver más</a>
+    </div>
+    <% end %>
     <div class="mv4">
       <a href="<%= @entity.website %>" target="_blank" class="f6 link dim dib br-pill black ba b--black pv2 ph3 mh1-ns v-mid mv2"><%= @entity.website %></a>
       <% if !@entity.phone.blank? %>

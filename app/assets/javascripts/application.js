@@ -3,6 +3,7 @@
 //= require parsley
 //= require parsley.i18n.es
 //= require notie.min
+//= require shave
 
 (function ($) {
   var profileMenuLink = $('#profile-menu-link');
@@ -18,7 +19,30 @@
     });
   }
 
-  $(".social-share").on("click", function(e) {
+  // Shave description
+  var btn = document.getElementById('moreDescription')
+  textEl = document.getElementById('textDescription'),
+    textString = textEl.textContent;
+
+  var textDescription = $('#textDescription').text();
+  if (textDescription.length > 230) {
+    shave(textEl, 100);
+  }
+
+  $("#moreDescription").on("click", function (e) {
+    e.preventDefault();
+    var hasShave = textEl.querySelector('#textDescription .js-shave');
+    if (hasShave !== null) {
+      textEl.textContent = textString;
+      btn.textContent = 'Ver menos';
+      return;
+    }
+    shave(textEl, 100);
+    btn.textContent = 'Ver más';
+    return;
+  });
+
+  $(".social-share").on("click", function (e) {
     e.preventDefault();
     windowShare($(this).attr("href"), 500, 300);
   });
@@ -27,7 +51,7 @@
     // Calculate the position of the popup so
     // it’s centered on the screen.
     var left = (screen.width / 2) - (width / 2),
-        top = (screen.height / 2) - (height / 2);
+      top = (screen.height / 2) - (height / 2);
 
     window.open(
       url,
