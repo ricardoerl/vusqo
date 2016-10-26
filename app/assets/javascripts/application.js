@@ -21,8 +21,11 @@
 
   // Shave description
   var btn = document.getElementById('moreDescription')
-  textEl = document.getElementById('textDescription'),
-    textString = textEl.textContent;
+  textEl = document.getElementById('textDescription');
+
+  if (textEl) {
+    var textString = textEl.textContent;
+  }
 
   var textDescription = $('#textDescription').text();
   if (textDescription.length > 230) {
