@@ -18,13 +18,13 @@
 } %>
 
 <section class="mw8 center relative pv4 ph3 tc">
-  <img src="<%= @entity.logo.url %>" class="w3 w4-ns db ba b--light-gray center br2" alt="Logo de <%= @entity.name %>" />
+  <img src="<%= @entity.logo.url %>" class="w4 db ba b--light-gray center br2" alt="Logo de <%= @entity.name %>" />
   <div class="mw7 center">
     <h1 class="f3 f1-nsmv4"><%= @entity.name %></h1>
     <p class="mv0 f5 f4-ns black" id="textDescription"><%= @entity.description %></p>
     <% if (@entity.description.length > 230) %>
     <div class="mv1">
-      <a href="#" id="moreDescription" class="link bg-transparent bn bt b--light-gray">Ver más</a>
+      <a href="#" id="moreDescription" class="link f6 bg-transparent bn bt b--light-gray">Leer más</a>
     </div>
     <% end %>
     <div class="mv4">

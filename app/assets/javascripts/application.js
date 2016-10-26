@@ -34,11 +34,11 @@
     var hasShave = textEl.querySelector('#textDescription .js-shave');
     if (hasShave !== null) {
       textEl.textContent = textString;
-      btn.textContent = 'Ver menos';
+      btn.textContent = 'Leer menos';
       return;
     }
     shave(textEl, 100);
-    btn.textContent = 'Ver más';
+    btn.textContent = 'Leer más';
     return;
   });
 
