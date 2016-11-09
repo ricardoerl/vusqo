@@ -14,7 +14,10 @@
 <% set_meta_tags twitter: {
   card: "summary",
   site: "@vusqo_",
-  creator: "@vusqo_"
+  creator: "@vusqo_",
+  title: @entity.name + " en Vusqo.com",
+  description: @entity.description,
+  image: image_url(@entity.logo.url)
 } %>
 
 <section class="mw8 center relative pv4 ph3 tc">
