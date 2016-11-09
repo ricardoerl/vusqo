@@ -18,7 +18,7 @@
 } %>
 
 <section class="mw8 center relative pv4 ph3 tc">
-  <%= cl_image_tag(@entity.logo.full_public_id, :width=>300, :height=>300, :background=>"white", :crop=>"pad", class: "w4 h-auto db ba b--light-gray center br2", :alt => @entity.name ) %>
+  <%= cl_image_tag(@entity.logo.full_public_id, :width=>300, :height=>300, :background=>"white", :crop=>"pad", class: "w4 h-auto db shadow-7 pa2 center br2", :alt => @entity.name ) %>
   <div class="mw7 center">
     <h1 class="f3 f1-nsmv4"><%= @entity.name %></h1>
     <p class="mv0 f5 f4-ns black" id="textDescription"><%= @entity.description %></p>
@@ -99,7 +99,7 @@
   </div>
 </section>
 
-<section class="mw7 center pv2 ph2 bt b--light-gray">
+<section class="mw7 center pv2 ph3 bt b--light-gray">
   <div class="pv3 tc">
     <h2 class="f6 fw4 gray mv0 ttu">Compartir perfil</h2>
     <div class="mt2">

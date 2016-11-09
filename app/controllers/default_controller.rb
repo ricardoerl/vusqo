@@ -1,6 +1,6 @@
 class DefaultController < ApplicationController
   def index
-    @entities = Entity.where('name is not null')
+    @entities = Entity.where('name is not null').limit(3)
   end
 
   def apply

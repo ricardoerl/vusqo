@@ -3,26 +3,20 @@
 
 <section class="mw8 center pv3 ph2">
   <div class="pv3 ph2">
-  <% if @entities.blank? %>
-    <div class="pv4 tc">
-      <h1 class="f-headline">:-(</h1>
-      <p class="mv0">Todavía no hay empresas registradas.</p>
-      <%= link_to "Registrar una empresa", registro_path, class: "f6 link dim dib br-pill bg-purple white pv2 ph3 mv3" %>
-    </div>
-  <% else %>
     <h2 class="f6 fw4 gray mv0 ttu">Empresas registradas</h2>
-  <% end %>
   </div>
+</section>
+<div class="mw8 center">
   <div class="cf">
     <% @entities.each do |entity| %>
-    <div class="fl w-50 w-20-m w-10-l pa2">
-      <%= link_to entity_path(entity), class: "db link dim tc", title: entity.name do %>
-        <%= cl_image_tag(entity.logo.full_public_id, :width=>300, :height=>300, :background=>"white", :crop=>"pad", class: "w-100 h-auto db ba b--light-gray br2" ) %>
-        <dl class="mt2 f6 lh-copy">
-          <dd class="ml0 black truncate w-100"><%= entity.name %></dd>
-        </dl>
-      <% end %>
+    <div class="fl w-100 w-33-ns ph3 mb3">
+      <div class="bg-white br2">
+        <%= link_to entity_path(entity), class: "cf db black no-underline", title: entity.name do %>
+          <%= cl_image_tag(entity.logo.full_public_id, :width=>75, :height=>75, :background=>"white", :crop=>"pad", class: "fl bg-white mw-100 h-auto dib br2 pa1 mr3 shadow-7 v-mid", alt: entity.name ) %>
+          <h3 class="f5 fw6 mv0 pv2 truncate-m"><%= entity.name %></h3>
+        <% end %>
+      </div>
     </div>
     <% end %>
   </div>
-</section>
+</div>

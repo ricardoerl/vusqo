@@ -13,6 +13,25 @@ a {
 }
 
 
+/* Tachyons */
+
+.top--3 {
+  top: -3em;
+}
+
+.top--4 {
+  top: -4em;
+}
+
+.shadow-6 {
+  box-shadow: 0 .5em 2em rgba(170, 170, 170, .3);
+}
+
+.shadow-7 {
+  box-shadow: 0 0 2em rgba(170, 170, 170, .3);
+}
+
+
 /* Notie style */
 
 #notie-alert-outer {

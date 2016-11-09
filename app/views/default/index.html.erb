@@ -1,38 +1,33 @@
 <% title 'El directorio creativo de El Salvador' %>
 <% description 'Vusqo es una plataforma que busca promover empresas, personas e instituciones dedicadas al desarrollo de tecnología, diseño y creatividad en El Salvador.' %>
 
-<section class="mw8 center pv4 pv5-ns ph3 tc tl-ns">
-  <h1 class="f3 f1-ns lh-solid mv0">Descubre la <span class="i">industria creativa</span> <br class="dn dib-ns"> en El Salvador</h1>
-  <div class="mt4">
-    <% if current_entity.blank? %>
-    <%= link_to "Registrar una empresa", registro_path, class: "f4 link dim dib br-pill bg-purple white pv2 ph4 mv2 mr2" %>
-    <% end %>
-    <%= link_to "Conoce el proyecto", page_path('nosotros'), class: "f4 link dim dib br-pill ba b--purple pv2 ph3 mv2" %>
-  </div>
-</section>
+<div class="bg-light-purple">
+  <section class="mw8 center pt3 pb5 pt5-ns pb6-ns ph3 tc tl-ns">
+    <h1 class="f2 f1-ns fw4 mv0 white lh-title">El directorio creativo de El Salvador</h1>
+    <h2 class="f4 f2-ns fw3 mv0 lh-title mw7">Descubre a las empresas que mueven la industria creativa en El Salvador.</h2>
+  </section>
+</div>
 
-<% if !@entities.blank? %>
-<section class="mw8 center ph3 pv2 pv3-ns">
-  <div class="pv3 ph2">
-    <h2 class="f6 fw4 gray mv0 ttu">Últimas empresas registradas</h2>
-  </div>
-  <div class="cf">
+<div class="relative top--4 mw8 center">
+  <div class="cf pv3">
     <% @entities.each do |entity| %>
-    <div class="fl w-50 w-20-m w-10-l pa2">
-      <%= link_to entity_path(entity), class: "db link dim tc", title: entity.name do %>
-        <%= cl_image_tag(entity.logo.full_public_id, :width=>300, :height=>300, :background=>"white", :crop=>"pad", class: "w-100 h-auto db ba b--light-gray br2", alt: entity.name ) %>
-        <dl class="mt2 f6 lh-copy">
-          <dd class="ml0 black truncate w-100"><%= entity.name %></dd>
-        </dl>
-      <% end %>
+    <div class="fl w-100 w-33-ns ph3 mv2 mv0-ns">
+      <div class="bg-white shadow-6 br2 pa3">
+        <div class="tc">
+          <%= link_to entity_path(entity), class: "db black no-underline tc", title: entity.name do %>
+            <%= cl_image_tag(entity.logo.full_public_id, :width=>100, :height=>100, :background=>"white", :crop=>"pad", class: "bg-white mw-100 h-auto db center br2 relative top-0 top--2-ns pa2 shadow-7", alt: entity.name ) %>
+            <h3 class="f4 fw6 mv1 truncate"><%= entity.name %></h3>
+            <p class="mv0 h3"><%=h truncate(entity.description, :length => 50) %></p>
+          <% end %>
+        </div>
+      </div>
     </div>
     <% end %>
   </div>
-  <div class="pv1 tc">
+  <div class="mt4 tc">
     <%= link_to "Ver todas las empresas", entities_path, class: "f6 link dim dib br-pill gray ba b--light-gray pv2 ph3"%>
   </div>
-</section>
-<% end %>
+</div>
 
 <section class="mw8 center ph3 pv2 pv3-ns">
   <div class="pv3 ph2">
@@ -40,15 +35,15 @@
   </div>
   <div class="cf">
     <div class="fl w-100 w-33-ns pa2">
-      <h3 class="f2 fw4 b h-auto h4-ns lh-solid mv3">Conecta con más personas</h3>
+      <h3 class="f3 fw4 b lh-title mv3 ttu">Conecta con más personas</h3>
       <p class="mt4 mv0">Crea tu perfil y permite que usuarios conecten de forma fácil contigo a través de nuestra plataforma.</p>
     </div>
     <div class="fl w-100 w-33-ns pa2">
-      <h3 class="f2 fw4 b h-auto h4-ns lh-solid mv3">Crece en nuestra comunidad</h3>
+      <h3 class="f3 fw4 b lh-title mv3 ttu">Crece en nuestra comunidad</h3>
       <p class="mt4 mv0">Se parte de una comunidad creativa en constante crecimiento en El Salvador.</p>
     </div>
     <div class="fl w-100 w-33-ns pa2">
-      <h3 class="f2 fw4 b h-auto h4-ns lh-solid mv3">Descubre nuevas herramientas</h3>
+      <h3 class="f3 fw4 b lh-title mv3 ttu">Descubre nuevas herramientas</h3>
       <p class="mt4 mv0">Conoce y utiliza de primera mano las nuevas características de nuestra plataforma.</p>
     </div>
   </div>
