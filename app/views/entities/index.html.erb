@@ -12,7 +12,7 @@
     <div class="fl w-100 w-33-ns ph3 mb3">
       <div class="bg-white br2">
         <%= link_to entity_path(entity), class: "cf db black no-underline", title: entity.name do %>
-          <%= cl_image_tag(entity.logo.full_public_id, :width=>75, :height=>75, :background=>"white", :crop=>"pad", class: "fl bg-white mw-100 h-auto dib br2 pa1 mr3 shadow-7 v-mid", alt: entity.name ) %>
+          <%= cl_image_tag(entity.logo.full_public_id, :width=>75, :height=>75, :background=>"white", :crop=>"pad", class: "fl bg-white mw-100 h-auto dib ba b--light-gray br2 pa1 mr3 v-mid", alt: entity.name ) %>
           <h3 class="f5 fw6 mv0 pv2 truncate-m"><%= entity.name %></h3>
         <% end %>
       </div>
